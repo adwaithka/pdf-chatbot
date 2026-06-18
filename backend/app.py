@@ -2,7 +2,12 @@ from fastapi import FastAPI, UploadFile, File
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 import os
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 from rag import (
     extract_text,
     chunk_text,
